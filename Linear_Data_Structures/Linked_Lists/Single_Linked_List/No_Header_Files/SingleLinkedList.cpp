@@ -30,7 +30,15 @@ class SLL{
                     temp = temp->next;
                 }
                 temp->next = newNode;
-            }
+            }   
+        }//end of insertNode
+
+        void deleteNode(int offset){
+            Node *temp = head, *prev = nullptr;
+            int Len = 0;
+        }
+
+        void printList(){
             
         }
 
