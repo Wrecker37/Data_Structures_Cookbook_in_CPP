@@ -36,6 +36,28 @@ class SLL{
         void deleteNode(int offset){
             Node *temp = head, *prev = nullptr;
             int Len = 0;
+
+            if(head == nullptr){
+                std::cout << "list is empty" << std::endl;
+                return;
+            }
+
+            while(temp->next != nullptr){
+                temp = temp->next;
+                Len++;
+            }
+
+            temp = head;
+            if(Len < offset){
+                std::cout << "index out of range" << std::endl;
+                return;
+            }
+
+            while(offset-- < 1){
+                prev = temp;
+                temp = temp->next;
+            }
+            
         }
 
         void printList(){
