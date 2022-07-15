@@ -4,16 +4,16 @@ class Stack{
 
 public:
 int top = -1;
-int size;
+int sizeOfArr;
 int stackArr[];
 
 Stack(int arrsize){
     stackArr[arrsize];
-    size = arrsize;
+    sizeOfArr = arrsize;
 }//end of constructor
 
 void Push(int num){
-    if(top > size){
+    if(top > sizeOfArr){
         std::cout << "stack full : Push() aborted" << std::endl;
         return;
     }
@@ -40,13 +40,23 @@ void printTop(){
 }//end of printTop()
 
 int size(){
-    return size;
+    return sizeOfArr;
 }//end of size
 
 };//end of stack class
 
 int main(){
 
+    Stack stack(10);
+
+    // stack.Pop();
+
+    stack.Push(100);
+    stack.Push(200);
+    stack.Push(300);
+    stack.Push(400);
+
+    stack.printTop();
 
     return 0;
 }
