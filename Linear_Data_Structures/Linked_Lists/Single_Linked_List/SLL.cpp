@@ -91,7 +91,7 @@ void SLL::printList()
 {
     Node *placeholder = head;
 
-    while(placeholder->next != NULL)
+    while(placeholder != NULL)
     {
         std::cout << placeholder->data + ", " << std::endl;
         placeholder = placeholder->next;
