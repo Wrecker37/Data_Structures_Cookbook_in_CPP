@@ -13,13 +13,12 @@ Stack(int arrsize){
 }//end of constructor
 
 void Push(int num){
-    if(top > sizeOfArr){
+    if(top == sizeOfArr - 1){
         std::cout << "stack full : Push() aborted" << std::endl;
         return;
     }
-
-    top++;
-    stackArr[top] = num;
+    stackArr[++top] = num;
+    
 }//end of Push()
 
 void Pop(){
@@ -55,8 +54,18 @@ int main(){
     stack.Push(200);
     stack.Push(300);
     stack.Push(400);
+    stack.Push(500);
+    stack.Push(600);
+    stack.Push(700);
+    stack.Push(800);
+    stack.Push(900);
+    stack.Push(1000);
+    // stack.Push(1100);
 
     stack.printTop();
+
+    // printf("Top: %d\n",stack.Top());
+    // printf("Top: %d\n",stack.Top());
 
     return 0;
 }
