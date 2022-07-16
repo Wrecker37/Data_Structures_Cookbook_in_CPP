@@ -21,10 +21,11 @@ Queue(int initSize){
 int dequeue(){
     if(isEmpty()){
         std::cout << "list is empty : aborted" << std::endl;
-        return;
+        return -1;
     }
     int x = arr[front];
     front = (front + 1) % capacity;
+    count--;
     return x;
 }//end of dequeue
 
@@ -33,9 +34,10 @@ void enqueue(int data){
         std::cout << "queue is full : aborted" << std::endl;
         return;
     }
-
-    arr[back] = data;
     back = (back + 1) % capacity;
+    arr[back] = data;
+    count++;
+    
 }//end enqueue
 
 int printFront(){
@@ -51,11 +53,30 @@ int size(){
 }//end size
 
 bool isEmpty(){
-    return(this->size() == 0);
+    return(size() == 0);
 }//end of isEmpty
 
 bool isFull(){
-    return(this->size() == capacity);
+    return(size() == capacity);
 }//end of isFull
 
-};
+};//end of queue class
+
+int main(){
+    Queue queue(10);
+
+    // queue.dequeue();
+    //queue.enqueue() 10 items
+    for(int i = 0; i < 10; i++){
+        queue.enqueue(i);
+        printf("%d, ", i);
+    }
+    std::cout << std::endl;
+    while(!queue.isEmpty()){
+        printf("%d ", queue.dequeue());
+    }
+
+
+
+    return 0;
+}
